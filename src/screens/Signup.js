@@ -1,16 +1,17 @@
-import { StyleSheet, Text, View,Image,TextInput } from 'react-native'
+import { StyleSheet, Text, View, Image, TextInput } from 'react-native'
 import React from 'react'
 import login3 from '../../assets/login3.png'
 import login4 from '../../assets/login4.png'
 import { buttonsignup } from '../comon/button'
-const Signup = () => {
+const Signup = ({ navigation }) => {
   return (
     <View style={styles.boss}>
 
       <View style={styles.top}>
         <Text style={styles.head}>Create New</Text>
         <Text style={styles.head1}>Account</Text>
-        <Text style={styles.head2}>Already Registered? Login</Text>
+        <Text style={styles.head2}
+          onPress={() => navigation.navigate('Signin')}>Already Registered? Login</Text>
         <Image style={styles.login1} source={login3} />
 
       </View>

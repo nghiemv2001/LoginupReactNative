@@ -3,13 +3,17 @@ import React from 'react'
 import login3 from '../../assets/login3.png'
 import login4 from '../../assets/login4.png'
 import { buttonlogin } from '../comon/button'
-const Signin = () => {
+import { NavigationContainer } from '@react-navigation/native';
+import { createNativeStackNavigator } from '@react-navigation/native-stack';
+const Signin = ({navigation}) => {
   return (
     <View style={styles.boss}>
 
       <View style={styles.top}>
         <Text style={styles.head}>Login</Text>
-        <Text style={styles.head1}>Sign in to Continue</Text>
+        <Text style={styles.head1}
+        onPress ={() => navigation.navigate('Signup')}
+        >Sign in to Continue</Text>
         <Image style={styles.login1} source={login3} />
 
       </View>
@@ -20,7 +24,9 @@ const Signin = () => {
         <TextInput placeholder='******' style={styles.inputpassword}></TextInput>
       </View>
       <View style={styles.bottom}>
-        <Text style={buttonlogin}>Login</Text>
+        <Text style={buttonlogin} 
+          
+        >Login</Text>
         <Image style={styles.login2}source={login4} />
       </View>
     </View>
